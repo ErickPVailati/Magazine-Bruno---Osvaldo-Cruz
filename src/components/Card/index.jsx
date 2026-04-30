@@ -12,3 +12,4 @@ function Card({ title, desc, price, img }) {
 }
 
 export default Card;
+

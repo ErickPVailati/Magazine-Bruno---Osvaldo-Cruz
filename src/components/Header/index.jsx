@@ -1,19 +1,18 @@
+import { Link } from "react-router-dom";
 import styles from './Header.module.css';
 
 export default function Header() {
-    return <>
+    return (
         <header className={styles.header}>
-            <div className={styles.headerBox}>
-                <h2>Magazine Bruninho</h2>
-                <p>Tudo de A à Z</p>
+            <div className={styles.brand}>
+                <h2 className={styles.title}>Magazine Tsugiro-Kimimame</h2>
+                <p className={styles.subtitle}>Tudo de A à Z</p>
             </div>
-            <div className={styles.headerBox}>
-                <nav className={styles.headerNav}>
-                    <a className={styles.headerLink} href="#">Home</a>
-                    <a className={styles.headerLink} href="#">Produtos</a>
-                    <a className={styles.headerLink} href="#">Carrinho</a>
-                </nav>
-            </div>
+            <nav className={styles.nav}>
+                <Link className={styles.link} to="/">Home</Link>
+                <Link className={styles.link} to="/catalog">Produtos</Link>
+                <Link className={styles.link} to="/sobre">Sobre</Link>
+            </nav>
         </header>
-    </>
+    );
 }
