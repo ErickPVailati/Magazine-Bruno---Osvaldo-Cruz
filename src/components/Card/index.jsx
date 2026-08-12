@@ -1,5 +1,6 @@
 import style from './Card.module.css';
 
+// Props são propriedades que passamos para alimentar um componente
 function Card({ title, desc, price, img }) {
     return <>
         <div className={style.card}>
