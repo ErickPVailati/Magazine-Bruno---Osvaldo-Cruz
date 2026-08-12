@@ -1,0 +1,72 @@
+.conteudoCatalogo {
+    width: 100%;
+    padding: 2rem 1rem;
+    background: #f9f9f9;
+}
+
+.conteudoCatalogo h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.containerCardsCatalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.cardWrapperCatalogo {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    transition: transform 0.2s ease;
+}
+
+.cardWrapperCatalogo:hover {
+    transform: scale(1.02);
+}
+
+/* remove sublinhado e herança de cor dos links que envolvem os cards */
+.cardWrapperCatalogo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 1024px) {
+    .containerCardsCatalogo {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .containerCardsCatalogo {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .conteudoCatalogo h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerCardsCatalogo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .conteudoCatalogo h2 {
+        font-size: 1.5rem;
+    }
+
+    .conteudoCatalogo {
+        padding: 1rem 0.5rem;
+    }
+}
