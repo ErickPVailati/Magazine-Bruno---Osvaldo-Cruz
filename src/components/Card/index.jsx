@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import style from './Card.module.css';
+import { formatarPreco } from '../../utils/formatarPreco';
 
 // Props são propriedades que passamos para alimentar um componente
 function Card({ title, desc, price, stock, img }) {
@@ -10,7 +11,7 @@ function Card({ title, desc, price, stock, img }) {
             <img className={style.img} src={img} alt={title} />
             <h4 className={style.title}>{title}</h4>
             <p className={style.description}>{desc}</p>
-            <p className={style.price}>{stock ? `R$ ${price.toFixed(2).replace('.', ',')}` : 'Indisponível'}</p>
+            <p className={style.price}>{formatarPreco(price)}{stock ? `R$ ${price.toFixed(2).replace('.', ',')}` : 'Indisponível'}</p>
             <div className={style.rating}>
                 <div className={style.stars} aria-label="Avaliação do produto">
                     {Array.from({ length: 5 }, (_, index) => {
